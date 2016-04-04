@@ -1,6 +1,8 @@
 # Recs With Parks
 
 ![Build Status](https://codeship.com/projects/4fb98df0-dcb7-0133-b68c-2e9843291021/status?branch=master)
+![Code Climate](https://codeclimate.com/github/concreteface/recswithparks.png)
+![Coverage Status](https://coveralls.io/repos/concreteface/recswithparks/badge.png)
 
  == README
 
