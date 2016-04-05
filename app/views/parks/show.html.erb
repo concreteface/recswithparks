@@ -1,0 +1,13 @@
+<h1>
+  <%= @park.name %>
+</h1>
+<%= @park.rating %>
+<%= @park.description %>
+<ul>
+  <% @reviews.each do |review| %>
+  <li>
+    <%= review.rating %>
+    <%= review.body %>
+  </li>
+  <% end %>
+</ul>

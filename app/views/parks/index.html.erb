@@ -1,6 +1,6 @@
 <h1>Parks:</h1>
 <ul>
-  <% @parks.each do |p| %>
-  <li><%= p.name %></li>
+  <% @parks.each do |park| %>
+  <li><%= link_to park.name, park %></li>
   <% end %>
 </ul>
