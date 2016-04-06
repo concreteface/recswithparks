@@ -21,6 +21,12 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <div class="field">
+    <%= f.label(:avatar, "Avatar URL") %>
+    <%= f.file_field :avatar, mulitpart: true %>
+    <%= f.hidden_field :avatar_cache %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
