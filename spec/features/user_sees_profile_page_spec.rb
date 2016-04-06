@@ -12,7 +12,7 @@ feature "user sees profile page" do
     visit "/"
 
     click_link(@user_1.email)
-    expect(page).to have_css("img[src*='http://placegoat.com/200/200']")
+    expect(page).to have_css("img[src*='#{@user_1.avatar.url}']")
     expect(page).to have_content(@user_1.reviews.first.body)
     expect(page).to have_content(@user_1.reviews.second.body)
     expect(page).to have_content(@user_1.reviews.first.park.name)
