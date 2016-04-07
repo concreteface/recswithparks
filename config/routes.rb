@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :parks do
     resources :reviews, only: [:create, :edit, :destroy]
   end
+
+  resources :users, only: [:show]
 end
