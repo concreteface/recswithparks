@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
       false
     else
       if upvote == true || upvote == false
-        previous_vote.update(upvote: vote)
+        previous_vote.delete
       else
         Vote.create(user: self, review: review, upvote: vote)
       end
