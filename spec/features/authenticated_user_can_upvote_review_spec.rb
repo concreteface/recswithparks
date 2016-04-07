@@ -16,14 +16,11 @@ feature 'authenticated user is able to up/downvote a review', js: true do
     within("\#vote-for-#{@first_review.id}") do
       expect(page).to have_content(0)
 
-      expect_no_page_reload do
-        click_link "Upvote"
-        expect(page).to have_content(1)
-        click_link "Downvote"
-        expect(page).to have_content(0)
-      end
+      click_link "Upvote"
+      expect(page).to have_content(1)
       click_link "Downvote"
-      # binding.pry
+      expect(page).to have_content(0)
+      click_link "Downvote"
       expect(page).to have_content(0)
     end
   end
