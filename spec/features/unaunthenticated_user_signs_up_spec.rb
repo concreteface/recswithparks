@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-#[X]User creates account
-#[X]User can sign in
-#[X]User can sign out
-#[]User can add avatar
-#[]User can update information
-#[]User can delete account
+# [X]User creates account
+# [X]User can sign in
+# [X]User can sign out
+# []User can add avatar
+# []User can update information
+# []User can delete account
 feature "unauthenticated user can create account" do
   scenario "visit new user page" do
     visit '/users/sign_up'

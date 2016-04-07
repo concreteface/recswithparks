@@ -10,6 +10,6 @@ class User < ActiveRecord::Base
     File.open(file_location.to_s) do |file|
       self.avatar = file
     end
-    self.save!
+    save!
   end
 end
