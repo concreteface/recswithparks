@@ -1,7 +1,7 @@
 class Park < ActiveRecord::Base
   has_many :reviews
   belongs_to :user
-  
+
   validates :name, :street, presence: true
   validates :description, length: { minimum: 20 }, allow_nil: true
 
