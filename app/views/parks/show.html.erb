@@ -1,8 +1,11 @@
 <h1>
   <%= @park.name %>
 </h1>
+<h4>
+  <%= @park.street %>
+</h4>
 <div>
-  <%= @park.rating %>
+  <%= @park.rating %><br>
   <%= @park.description %>
 </div>
 <ul>
@@ -17,5 +20,4 @@
       <%= review.body %>
     </li>
   <% end %>
-
 </ul>
