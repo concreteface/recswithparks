@@ -1,4 +1,5 @@
 class VotesController < ApplicationController
+  include ApplicationHelper
   def create
     @user = current_user
     @review = Review.find(params[:review_id])
