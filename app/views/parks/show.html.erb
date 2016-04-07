@@ -1,6 +1,9 @@
 <h1>
   <%= @park.name %>
 </h1>
+<h4>
+  <%= @park.street %>
+</h4>
 <div>
   <p>
     Rating
@@ -24,7 +27,6 @@
     <%= review.body %>
   </li>
   <% end %>
-
 </ul>
 
 <%= form_for [@park, @review] do |f| %>
