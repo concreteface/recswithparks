@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   end
 
   resources :votes, only: [:create, :update, :destroy]
+
   resources :users, only: [:show]
 end
