@@ -14,23 +14,11 @@
 //= require jquery_ujs
 //= require_tree .
 
-$(function() {
-
-  $('.upvote-link').click(function(event) {
-    event.preventDefault();
-    vote(true, $(this));
-  });
-
-  $('.downvote-link').click(function(event) {
-    event.preventDefault();
-    vote(false, $(this));
-  })
-});
 
 var vote = function(upvote, element) {
-  var voteDiv = element.parent().parent()
+  var voteDiv = element.parent().parent();
   var fullId = voteDiv.prop('id');
-  var reviewId = fullId.match(/vote-for-([0-9]+)/)[1]
+  var reviewId = fullId.match(/vote-for-([0-9]+)/)[1];
 
   var voteParams = {
     vote: upvote,
@@ -54,5 +42,17 @@ var vote = function(upvote, element) {
       countSpan.text(previousCount + incrementor);
     }
   });
-
 };
+
+$(function() {
+
+  $('.upvote-link').click(function(event) {
+    event.preventDefault();
+    vote(true, $(this));
+  });
+
+  $('.downvote-link').click(function(event) {
+    event.preventDefault();
+    vote(false, $(this));
+  });
+});
