@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_many :reviews
 
   def add_avatar(file_location)
-    File.open("#{file_location}") do |file|
+    File.open(file_location.to_s) do |file|
       self.avatar = file
     end
     self.save!

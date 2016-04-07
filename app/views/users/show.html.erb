@@ -4,10 +4,13 @@
   <img src="<%= @user.avatar.url %>" height="200" width="200">
 </div>
 
-<div>
+<dl>
   <h3>Your Reviews</h3>
   <% @reviews.each do |review| %>
-    <li>Park Name: <%= review.park.name %><br>
-    Review: <%= review.body %></li>
+    <dt>Park Name: <%= review.park.name %></li>
+    <dd>
+      <li>Review: <%= review.body %></li>
+    </dd>
+  </dt>
   <% end %>
-</div>
+</dl>
