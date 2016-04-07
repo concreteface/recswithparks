@@ -14,10 +14,12 @@ feature "unauthenticated user can create account" do
     fill_in 'Email', with: 'yo@ho.com'
     fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'password'
+    attach_file :user_avatar, "#{Rails.root}/goats_avatar.jpg"
     click_button 'Sign up'
 
     expect(page).to have_content('yo@ho.com')
     expect(page).to have_content('Parks')
+    expect(page).to have_css("img[src*='goats_avatar.jpg']")
     expect(page).not_to have_content('Log in')
     expect(page).not_to have_content('Sign up')
   end
