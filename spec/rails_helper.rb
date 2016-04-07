@@ -30,3 +30,7 @@ end
 def clear_users
   User.delete_all
 end
+
+def clear_parks
+  Park.delete_all
+end

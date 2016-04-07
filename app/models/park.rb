@@ -4,6 +4,9 @@ class Park < ActiveRecord::Base
 
   has_many :reviews
 
+  paginates_per 10
+  max_paginates_per 10
+
   def rating
     if reviews.empty?
       0

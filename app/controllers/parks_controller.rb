@@ -2,7 +2,7 @@ class ParksController < ApplicationController
 
   before_filter :authenticate_user!, except: [:index, :show]
   def index
-    @parks = Park.all
+    @parks = Park.all.page params[:page]
   end
 
   def show
