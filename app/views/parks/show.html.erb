@@ -10,9 +10,6 @@
 </div>
 <ul>
   <% @reviews.each do |review| %>
-    <li><%= review.rating %></li>
-    <li><%= review.body %></li>
-  <% end %>
     <li>
       <div class="vote-block" id="vote-for-<%= review.id %>" >
         <span> <%= link_to "Upvote", "#", class: 'upvote-link' %> </span>
