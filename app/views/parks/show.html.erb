@@ -5,19 +5,42 @@
   <%= @park.street %>
 </h4>
 <div>
-  <%= @park.rating %><br>
+  <p>
+    Rating
+    <%= @park.rating %>
+  </p>
   <%= @park.description %>
 </div>
 <ul>
   <% @reviews.each do |review| %>
-    <li>
-      <div class="vote-block" id="vote-for-<%= review.id %>" >
-        <span> <%= link_to "Upvote", "#", class: 'upvote-link' %> </span>
-        <span class="vote-total"><%= review.vote_total %></span>
-        <span> <%= link_to "Downvote", "#", class: 'downvote-link' %> </span>
-      </div>
-      <%= review.rating %>
-      <%= review.body %>
-    </li>
+  <li>
+    <div class="vote-block" id="vote-for-<%= review.id %>">
+      <span>
+        <%= link_to "Upvote", "#", class: 'upvote-link' %>
+      </span>
+      <span class="vote-total"><%= review.vote_total %></span>
+      <span>
+        <%= link_to "Downvote", "#", class: 'downvote-link' %>
+      </span>
+    </div>
+    <%= review.rating %>
+    <%= review.body %>
+  </li>
   <% end %>
 </ul>
+
+<%= form_for [@park, @review] do |f| %>
+<div class="row">
+  <%= f.label :rating %>
+  <%= f.select :rating, options_for_select(@ratings_options) %>
+</div>
+
+<div>
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+</div>
+
+<div class="actions">
+  <%= f.submit "Add Review" %>
+</div>
+<% end  %>

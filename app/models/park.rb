@@ -8,10 +8,10 @@ class Park < ActiveRecord::Base
   max_paginates_per 10
 
   def rating
-    if reviews.empty?
-      0
-    else
-      reviews.pluck(:rating).reduce(:+) / reviews.size
+    rating = 0.0
+    unless reviews.empty?
+      rating = (reviews.pluck(:rating).reduce(:+).to_f / reviews.size).round(1)
     end
+    rating
   end
 end

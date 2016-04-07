@@ -1,6 +1,6 @@
 class ParksController < ApplicationController
-
   before_filter :authenticate_user!, except: [:index, :show]
+
   def index
     @parks = Park.all.page params[:page]
   end
@@ -8,6 +8,8 @@ class ParksController < ApplicationController
   def show
     @park = Park.find(params[:id])
     @reviews = @park.reviews
+    @review = Review.new
+    @ratings_options = [1, 2, 3, 4, 5]
   end
 
   def new
