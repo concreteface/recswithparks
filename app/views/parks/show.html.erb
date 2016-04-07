@@ -13,4 +13,14 @@
     <li><%= review.rating %></li>
     <li><%= review.body %></li>
   <% end %>
+    <li>
+      <div class="vote-block" id="vote-for-<%= review.id %>" >
+        <span> <%= link_to "Upvote", "#", class: 'upvote-link' %> </span>
+        <span class="vote-total"><%= review.vote_total %></span>
+        <span> <%= link_to "Downvote", "#", class: 'downvote-link' %> </span>
+      </div>
+      <%= review.rating %>
+      <%= review.body %>
+    </li>
+  <% end %>
 </ul>

@@ -39,10 +39,11 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'valid_attribute'
   gem 'shoulda-matchers', require: false
-
+  # gem 'selenium-webdriver'
   gem 'coveralls', require: false
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'poltergeist'
 end
 
 group :development do
