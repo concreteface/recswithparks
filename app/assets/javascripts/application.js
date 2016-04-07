@@ -43,16 +43,16 @@ var vote = function(upvote, element) {
     data: voteParams
   });
 
-  var errorString = (upvote) ? 'You cannot upvote twice' : 'You cannot downvote twice'
+  var errorString = (upvote) ? 'You cannot upvote twice' : 'You cannot downvote twice';
   var incrementor = (upvote) ? 1 : -1;
   request.done(function(data) {
     if (data.results === 'duplicate') {
-      alert(errorString)
+      alert(errorString);
     } else {
       var countSpan = voteDiv.find('.vote-total');
       var previousCount = parseInt(countSpan.text());
       countSpan.text(previousCount + incrementor);
     }
-  })
+  });
 
 };

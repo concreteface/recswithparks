@@ -8,10 +8,10 @@ class User < ActiveRecord::Base
   def vote(vote, review)
     previous_vote = Vote.find_by(user: self, review: review)
     upvote = previous_vote.upvote unless previous_vote.nil?
-    if(vote == upvote)
+    if (vote == upvote)
       false
     else
-      if(upvote == true or upvote == false)
+      if (upvote == true || upvote == false)
         previous_vote.update(upvote: vote)
       else
         Vote.create(user: self, review: review, upvote: vote)

@@ -4,7 +4,7 @@ class Review < ActiveRecord::Base
   has_many :votes
 
   def vote_total
-    upvotes_count = votes.select{|vote| vote}.length
+    upvotes_count = votes.count{ |vote| vote }
     upvotes_count - (votes.length - upvotes_count)
   end
 end
