@@ -1,16 +1,16 @@
-<h1>
+<h1> Park -
   <%= @park.name %>
 </h1>
-<h4>
+<h4>Street -
   <%= @park.street %>
 </h4>
-<div>
-  <p>
+<h3>
     Rating
     <%= @park.rating %>
-  </p>
+<h3>
   <%= @park.description %>
 </div>
+<h3> Reviews </h3>
 <ul>
   <% @reviews.each do |review| %>
   <li>

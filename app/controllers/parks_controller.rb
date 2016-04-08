@@ -18,6 +18,7 @@ class ParksController < ApplicationController
 
   def create
     @park = Park.new(park_params)
+    @park.user = current_user
     if @park.save
       redirect_to @park
     else
