@@ -1,8 +1,9 @@
 class Park < ActiveRecord::Base
+  has_many :reviews
+  belongs_to :user
+
   validates :name, :street, presence: true
   validates :description, length: { minimum: 20 }, allow_nil: true
-
-  has_many :reviews
 
   paginates_per 10
   max_paginates_per 10
