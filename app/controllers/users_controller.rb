@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
   def destroy
     if User.find(params[:id]).delete
-      render json: "success"
+      render json: {results: "success" }
     else
       render json: "failure"
     end

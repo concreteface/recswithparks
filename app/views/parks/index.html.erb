@@ -1,11 +1,13 @@
 <h1>Parks:</h1>
 <ul>
   <% @parks.each do |park| %>
-  <li><%= link_to park.name, park %></li>
+    <li><%= link_to park.name, park %></li>
+    <% if current_user.try(:admin?) %>
+      <div class="button alert delete-button" id="park-<%= user.id %>">Delete Delete</div>
+    <% end %>
   <% end %>
 </ul>
 <%= paginate @parks %>
-
 <div class="sidebar-right" style="float: right;">
   <%= link_to "Add New Park", new_park_path %>
 </div>
