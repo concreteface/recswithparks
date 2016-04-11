@@ -13,10 +13,10 @@
 //   8. Accordion Menu
 //   9. Badge
 //  10. Breadcrumbs
-//  11. Button
-//  12. Button Group
+//  11.
+//  12.  Group
 //  13. Callout
-//  14. Close Button
+//  14. Close
 //  15. Drilldown
 //  16. Dropdown
 //  17. Dropdown Menu
@@ -255,7 +255,7 @@ $button-opacity-disabled: 0.25;
 
 $buttongroup-margin: 1rem;
 $buttongroup-spacing: 1px;
-$buttongroup-child-selector: '.button';
+$buttongroup-child-selector: ".button";
 $buttongroup-expand-max: 6;
 
 // 13. Callout
@@ -404,7 +404,7 @@ $offcanvas-transition-length: 0.5s;
 $offcanvas-transition-timing: ease;
 $offcanvas-fixed-reveal: true;
 $offcanvas-exit-background: rgba($white, 0.25);
-$maincontent-class: 'off-canvas-content';
+$maincontent-class: "off-canvas-content";
 $maincontent-shadow: 0 0 10px rgba($black, 0.5);
 
 // 25. Orbit
