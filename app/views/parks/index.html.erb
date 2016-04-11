@@ -1,11 +1,12 @@
-<h1>Parks:</h1>
-<ul>
-  <% @parks.each do |park| %>
-  <li><%= link_to park.name, park %></li>
-  <% end %>
-</ul>
-<%= paginate @parks %>
+<div class="not-transparent panel callout radius">
+  <h1>Parks:</h1>
+  <ul>
+    <% @parks.each do |park| %>
+    <li><%= link_to park.name, park %></li>
+    <% end %>
+  </ul>
+  <%= paginate @parks %>
 
-<div class="sidebar-right" style="float: right;">
-  <%= link_to "Add New Park", new_park_path %>
+
+    <%= link_to "Add New Park", new_park_path %>
 </div>
