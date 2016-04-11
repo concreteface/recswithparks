@@ -1,5 +1,6 @@
 class VotesController < ApplicationController
   include ApplicationHelper
+  before_filter :authenticate_user!
   def create
     @user = current_user
     @review = Review.find(params[:review_id])

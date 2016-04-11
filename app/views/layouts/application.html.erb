@@ -22,7 +22,7 @@
       </div>
 
       <!-- Medium-Up Navigation -->
-      <nav class="top-bar" id="nav-menu">
+      <nav class="top-bar transparent" id="nav-menu">
 
         <div class="logo-wrapper hide-for-small-only">
           <div class="logo">
@@ -46,6 +46,7 @@
         <div class="top-bar-right">
           <ul class="vertical medium-horizontal menu">
             <% if user_signed_in? %>
+            <li><img src="<%= current_user.avatar.url %>" height="25" width="25"></li>
             <li><%= link_to current_user.email, user_path(current_user) %></li>
             <li><%= link_to 'Sign Out', destroy_user_session_path, method: 'DELETE', confirm: 'You sure?' %></li>
             <% elsif !(current_page?(controller: 'devise/registrations', action: 'new') or current_page?(controller: 'devise/sessions', action: 'new')) %>

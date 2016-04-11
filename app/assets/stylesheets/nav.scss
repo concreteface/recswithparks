@@ -46,6 +46,7 @@ $logo-margin: - ($logo-width / 2);
 
     ul {
       float: left;
+      background: transparent;
     }
   }
 
@@ -56,6 +57,7 @@ $logo-margin: - ($logo-width / 2);
 
     ul {
       float: right;
+      background: transparent;
     }
   }
 }

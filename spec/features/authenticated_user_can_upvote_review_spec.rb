@@ -21,7 +21,9 @@ feature 'authenticated user is able to up/downvote a review', js: true do
       click_link "Downvote"
       expect(page).to have_content(0)
       click_link "Downvote"
-      expect(page).to have_content(0)
+      expect(page).to have_content(-1)
+      click_link "Downvote"
+      expect(page).to have_content(-1)
     end
   end
 end
