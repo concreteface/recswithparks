@@ -12,11 +12,13 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    if User.find(params[:id]).delete
-      render json: {results: "success" }
-    else
-      render json: "failure"
-    end
+    @user = User.find(params[:id])
+    @user.parks.delete
+    @user.reviews.delete
+    @user.delete
+    render json: {results: "success" }
+  rescue ActiveRecord::DeleteRestrictionError
+    render json: "failure"
   end
 
   private

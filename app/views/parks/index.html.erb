@@ -1,9 +1,11 @@
 <h1>Parks:</h1>
 <ul>
   <% @parks.each do |park| %>
-    <li><%= link_to park.name, park %></li>
-    <% if current_user.try(:admin?) %>
-      <div class="button alert delete-button" id="park-<%= user.id %>">Delete Delete</div>
+    <li>
+      <%= link_to park.name, park %>
+      <% if current_user.try(:admin?) %>
+        <div class="button alert delete-button" id="park-<%= park.id %>">Delete Park</div>
+      </li>
     <% end %>
   <% end %>
 </ul>

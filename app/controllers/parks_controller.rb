@@ -29,7 +29,11 @@ class ParksController < ApplicationController
 
   def destroy
     @park = Park.find(params[:id])
-    if @park.
+    @park.reviews.delete
+    @park.delete
+    render json: {results: "success" }
+  rescue ActiveRecord::DeleteRestrictionError
+    render json: "failure"
   end
 
   private
