@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
   def authorize
     unless current_user.try(:admin?)
-      flash[:error] = 'You lack the necessary permission to view this page'
+      flash[:alert] = 'You lack the necessary permission to view this page'
       redirect_to root_path
     end
   end
