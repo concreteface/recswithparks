@@ -3,8 +3,10 @@ require 'rails_helper'
 feature "user click paginated links" do
 
   before(:all) do
+    clear_users
     clear_parks
     @sample_park = "Boston Public Garden "
+    FactoryGirl.reload
     FactoryGirl.create_list(:park, 40)
   end
 
