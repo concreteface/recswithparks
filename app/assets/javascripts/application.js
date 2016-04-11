@@ -77,12 +77,11 @@ $(function() {
 
   });
 
-
-
-
-
-
 });
 
-
+$(document).ajaxError(function (e, xhr) {
+  if (xhr.status == 401) {
+    alert('You must be signed in to vote on reviews');
+  }
+});
 
