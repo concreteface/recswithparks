@@ -430,7 +430,7 @@ DEPENDENCIES
   kaminari
   launchy
   mailcatcher
-  pg (~> 0.15)
+  pg
   poltergeist
   pry-rails
   rails (= 4.2.6)
