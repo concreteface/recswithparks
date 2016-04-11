@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   before_filter :authorize, only: :index
+
   def index
     @users = User.all
   end
@@ -8,6 +9,14 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @reviews = @user.reviews
+  end
+
+  def destroy
+    if User.find(params[:id]).delete
+      render json: "success"
+    else
+      render json: "failure"
+    end
   end
 
   private

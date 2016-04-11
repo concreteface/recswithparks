@@ -55,4 +55,34 @@ $(function() {
     event.preventDefault();
     vote(false, $(this));
   });
+
+  $('.delete-user-button').click(function(event){
+    var userIdFull = $(this).prop('id');
+    var userId = userIdFull.match(/user-([0-9]+)/)[1];
+
+
+    var request = $.ajax({
+      method: 'DELETE',
+      url: '/users/' + userId,
+    });
+
+    request.done(function(data){
+      if(data == "success"){
+        window.location.href = '/';
+        alert("User deleted successfully");
+      } else {
+        alert('Unable to delete user, sorry');
+      }
+    });
+
+  });
+
+
+
+
+
+
 });
+
+
+
