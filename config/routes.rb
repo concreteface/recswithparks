@@ -10,4 +10,7 @@ Rails.application.routes.draw do
   resources :votes, only: [:create, :update, :destroy]
 
   resources :users, only: [:index, :show, :destroy]
+  
+  resources :reviews, only: [:index, :destroy]
+
 end

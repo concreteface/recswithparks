@@ -5,8 +5,8 @@
       <%= link_to park.name, park %>
       <% if current_user.try(:admin?) %>
         <div class="button alert delete-button" id="park-<%= park.id %>">Delete Park</div>
-      </li>
-    <% end %>
+      <% end %>
+    </li>
   <% end %>
 </ul>
 <%= paginate @parks %>
