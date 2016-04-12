@@ -32,6 +32,15 @@ class ParksController < ApplicationController
     @search_results = Park.search(@query)
   end
 
+  def destroy
+    @park = Park.find(params[:id])
+    @park.reviews.delete
+    @park.delete
+    render json: { results: "success" }
+  rescue ActiveRecord::DeleteRestrictionError
+    render json: "failure"
+  end
+
   private
 
   def park_params

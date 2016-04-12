@@ -1,12 +1,18 @@
-<div class="not-transparent panel callout radius">
+<div class="not-transparent panel callout">
   <h3>Parks:</h3>
   <ul>
     <% @parks.each do |park| %>
-    <li><%= link_to park.name, park %></li>
+    <li>
+      <%= link_to park.name, park %>
+      <% if current_user.try(:admin?) %>
+      <div class="button alert delete-button" id="park-<%= park.id %>">Delete Park</div>
+      <% end %>
+    </li>
     <% end %>
   </ul>
   <%= paginate @parks %>
-
-
+  <div class="sidebar-right" style="float: left;">
     <%= link_to "Add New Park", new_park_path %>
+  </div>
+  <br>
 </div>
