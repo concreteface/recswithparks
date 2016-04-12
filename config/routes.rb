@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_for :users
   root to: "parks#index"
 
@@ -15,5 +14,4 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :destroy]
 
   resources :reviews, only: [:index, :destroy]
-
 end

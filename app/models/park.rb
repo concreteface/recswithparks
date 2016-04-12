@@ -17,6 +17,6 @@ class Park < ActiveRecord::Base
   end
 
   def self.search(query)
-    self.where('name ILIKE ? OR description ILIKE ?', "%#{query}%", "%#{query}%" )
+    where( 'name ILIKE ? OR description ILIKE ?', "%#{query}%", "%#{query}%" )
   end
 end

@@ -7,7 +7,7 @@ feature "user is able to search parks" do
     @park1 = FactoryGirl.create(:park, name: "Unique park")
     @park2 = FactoryGirl.create(:park, name: "Green park", description: "Blue 111111111111111111")
     @park3 = FactoryGirl.create(:park, name: "Nowhere", description: "not here 111111111111111111")
-    end
+  end
 
   scenario "user searches with a park name" do
     visit root_path
