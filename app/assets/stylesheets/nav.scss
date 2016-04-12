@@ -7,7 +7,8 @@ $logo-padding: $logo-width - 32px;
 // Leave alone
 $logo-margin: - ($logo-width / 2);
 
-$transparent-green: rgba(110, 165, 56, 0.8);
+$transparent-green: rgba(110, 165, 56, 0.4);
+$not-transparent-green: rgba(255, 255, 255, 0.8);
 
 //* Small Navigation */
 .logo-small {
@@ -66,4 +67,8 @@ $transparent-green: rgba(110, 165, 56, 0.8);
 
 .transparent {
   background: $transparent-green;
+}
+
+.not-transparent {
+  background: $not-transparent-green;
 }

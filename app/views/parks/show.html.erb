@@ -1,36 +1,38 @@
-<h1> Park -
+<div class="not-transparent panel callout radius">
+<h3>
   <%= @park.name %>
-</h1>
+</h3>
 <h4>Street -
   <%= @park.street %>
 </h4>
-<h3>
-    Rating
-    <%= @park.rating %>
-<h3>
+<h4>
+  Rating
+  <%= @park.rating %>
+<h4>
   <%= @park.description %>
-</div>
-<h3> Reviews </h3>
+<h4>
+  Reviews
+</h4>
 <ul>
   <% @reviews.each do |review| %>
   <li>
     <div class="vote-block" id="vote-for-<%= review.id %>">
-      <span>
-        <%= link_to "Upvote", "#", class: 'upvote-link' %>
-      </span>
-      <span class="vote-total"><%= review.vote_total %></span>
-      <span>
-        <%= link_to "Downvote", "#", class: 'downvote-link' %>
-      </span>
-    </div>
     <%= review.rating %>
     <%= review.body %>
+    <span>
+      <%= link_to "Upvote", "#", class: 'upvote-link' %>
+    </span>
+    <span class="vote-total"><%= review.vote_total %></span>
+    <span>
+      <%= link_to "Downvote", "#", class: 'downvote-link' %>
+    </span>
+  </div>Rating:
   </li>
   <% end %>
 </ul>
 
 <%= form_for [@park, @review] do |f| %>
-<div class="row">
+<div>
   <%= f.label :rating %>
   <%= f.select :rating, options_for_select(@ratings_options) %>
 </div>
@@ -44,3 +46,4 @@
   <%= f.submit "Add Review" %>
 </div>
 <% end  %>
+</div>
