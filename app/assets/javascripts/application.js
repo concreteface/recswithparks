@@ -48,9 +48,6 @@ var deleteRecord = function(element) {
     var itemIdFull = element.prop('id');
     var itemType = itemIdFull.split('-')[0];
     var itemId = itemIdFull.split('-')[1];
-
-    console.log(itemType)
-    debugger
     var request = $.ajax({
         method: 'DELETE',
         url: '/' + itemType + 's/' + itemId
