@@ -32,7 +32,7 @@ $not-transparent-green: rgba(255, 255, 255, 0.8);
     position: relative;
 
     .logo {
-      height:  92px;
+      height: 92px;
       left: 50%;
       margin-left: $logo-margin;
       position: absolute;
@@ -56,7 +56,7 @@ $not-transparent-green: rgba(255, 255, 255, 0.8);
   // Left part
   .top-bar-left {
     padding-right: $logo-padding;
-    width:  50%;
+    width: 50%;
 
     ul {
       background: transparent;
