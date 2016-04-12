@@ -18,7 +18,7 @@ Profile photos are uploaded with the CarrierWave gem, and results are paginated 
 
 Feature tests utilize RSpec/Capybara.
 
-This app is hosted on Heroku. (Link TBD)
+[This app is hosted on Heroku.](http://recswithparks.herokuapp.com/)
 
 **Features**
 
