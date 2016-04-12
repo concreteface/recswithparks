@@ -15,4 +15,8 @@ class Park < ActiveRecord::Base
     end
     rating
   end
+
+  def self.search(query)
+    self.where('name ILIKE ? OR description ILIKE ?', "%#{query}%", "%#{query}%" )
+  end
 end

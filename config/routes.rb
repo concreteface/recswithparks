@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   root to: "parks#index"
 
   resources :parks do
+    collection do
+      get 'search'
+    end
     resources :reviews, only: [:create, :edit, :destroy]
   end
 

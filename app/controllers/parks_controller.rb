@@ -1,5 +1,5 @@
 class ParksController < ApplicationController
-  before_filter :authenticate_user!, except: [:index, :show]
+  before_filter :authenticate_user!, except: [:index, :show, :search]
 
   def index
     @parks = Park.all.page params[:page]
@@ -25,6 +25,11 @@ class ParksController < ApplicationController
       flash[:alert] = @park.errors.full_messages.join(", ")
       render :new
     end
+  end
+
+  def search
+    @query = params[:query]
+    @search_results = Park.search(@query)
   end
 
   private
