@@ -12,8 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require_tree .
 
+$(document).foundation();
 
 var vote = function(upvote, element) {
   var voteDiv = element.parent().parent();
@@ -56,6 +58,8 @@ $(function() {
     vote(false, $(this));
   });
 });
+
+$(function(){ $(document).foundation(); });
 
 $(document).ajaxError(function (e, xhr) {
   if (xhr.status == 401) {
