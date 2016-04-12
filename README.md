@@ -7,11 +7,6 @@
 
 (Placeholder for homepage screenshot including nice picture of Boston Public Garden)
 
-### Group Members
-___
-
-Group project for Launch Academy developed by John, Meredith, Kevin and Evan.
-
 ### Description
 ___
 
@@ -38,4 +33,10 @@ ___
 * Search for a specific park
 * Sign up to be an administrator to help moderate the site
 * Get an email when someone reviews a park you added
+
+### Group Members
+___
+
+Group project for Launch Academy developed by John, Meredith, Kevin and Evan.
+
 
