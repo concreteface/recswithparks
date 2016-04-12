@@ -56,14 +56,14 @@ var deleteRecord = function(element) {
     });
 
     request.done(function(data) {
-        if (data.results == "success") {
-            alert(itemType + " deleted successfully");
+        if (data.results == 'success') {
+            alert(itemType + ' deleted successfully');
             $('#' + itemType + '-' + itemId).parent().remove();
         } else {
             alert('Unable to delete ' + itemType + ' sorry');
         }
     });
-}
+};
 
 $(function() {
 
@@ -77,8 +77,8 @@ $(function() {
         vote(false, $(this));
     });
 
-    $('.delete-button').click(function(event) {
-        deleteRecord($(this))
+    $('.delete-button').click(function() {
+        deleteRecord($(this));
     });
 
 });

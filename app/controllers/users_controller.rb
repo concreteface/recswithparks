@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   before_filter :authorize, only: :index
 
   def index
@@ -16,7 +15,7 @@ class UsersController < ApplicationController
     @user.parks.delete
     @user.reviews.delete
     @user.delete
-    render json: {results: "success" }
+    render json: { results: "success" }
   rescue ActiveRecord::DeleteRestrictionError
     render json: "failure"
   end

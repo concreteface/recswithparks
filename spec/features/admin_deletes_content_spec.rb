@@ -37,5 +37,5 @@ feature "admin deletes content", js: true do
     expect(page).to have_content(@user.email)
     find("div#user-#{@user.id}").click
     expect(page).to_not have_content(@user.email)
-  end 
+  end
 end

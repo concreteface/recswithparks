@@ -20,7 +20,7 @@ class ReviewsController < ApplicationController
   def destroy
     @review = Review.find(params[:id])
     @review.delete
-    render json: {results: "success" }
+    render json: { results: "success" }
   rescue ActiveRecord::DeleteRestrictionError
     render json: "failure"
   end
