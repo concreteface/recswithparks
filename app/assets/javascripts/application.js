@@ -12,8 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require_tree .
 
+$(document).foundation();
 
 var vote = function(upvote, element) {
     var voteDiv = element.parent().parent();

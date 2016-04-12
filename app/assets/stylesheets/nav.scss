@@ -1,0 +1,74 @@
+//* Variables */
+
+// Adjust width accordingly (use even #'s)
+$logo-width: 118px;
+// Reduce px value to increase space between logo and menu text
+$logo-padding: $logo-width - 32px;
+// Leave alone
+$logo-margin: - ($logo-width / 2);
+
+$transparent-green: rgba(110, 165, 56, 0.4);
+$not-transparent-green: rgba(255, 255, 255, 0.8);
+
+//* Small Navigation */
+.logo-small {
+  float: right;
+}
+
+.title-bar {
+  padding: 0.5rem;
+}
+
+.menu-icon,
+.title-bar-title {
+  position: relative;
+  top: 10px;
+}
+
+//* Medium-Up Navigation */
+@media only screen and (min-width: 40rem) {
+
+  .logo-wrapper {
+    position: relative;
+
+    .logo {
+      height: 92px;
+      left: 50%;
+      margin-left: $logo-margin;
+      position: absolute;
+      right: 50%;
+      top: -6px;
+      width: $logo-width;
+    }
+  }
+
+  // Right part
+  .top-bar-right {
+    padding-left: $logo-padding;
+    width: 50%;
+
+    ul {
+      background: transparent;
+      float: left;
+    }
+  }
+
+  // Left part
+  .top-bar-left {
+    padding-right: $logo-padding;
+    width: 50%;
+
+    ul {
+      background: transparent;
+      float: right;
+    }
+  }
+}
+
+.transparent {
+  background: $transparent-green;
+}
+
+.not-transparent {
+  background: $not-transparent-green;
+}
