@@ -4,11 +4,16 @@
 ![Code Climate](https://codeclimate.com/github/concreteface/recswithparks.png)
 ![Coverage Status](https://coveralls.io/repos/concreteface/recswithparks/badge.png)
 
- == README
 
 (Placeholder for homepage screenshot including nice picture of Boston Public Garden)
 
+### Group Members
+___
+
 Group project for Launch Academy developed by John, Meredith, Kevin and Evan.
+
+### Description
+___
 
 This project is a web application that allows people looking for parks in the Boston area to look up parks by location and rating to find good parks near where they are. This way they are able to get outside more in places they want to be while still in the city.
 
@@ -18,9 +23,13 @@ Profile photos are uploaded with the CarrierWave gem, and results are paginated 
 
 Feature tests utilize RSpec/Capybara.
 
+### Deployment
+___
+
 [This app is hosted on Heroku.](http://recswithparks.herokuapp.com/)
 
-**Features**
+### Features
+___
 
 * Create a park for reviews
 * Rate a park and include a new reviews
@@ -29,3 +38,4 @@ Feature tests utilize RSpec/Capybara.
 * Search for a specific park
 * Sign up to be an administrator to help moderate the site
 * Get an email when someone reviews a park you added
+
