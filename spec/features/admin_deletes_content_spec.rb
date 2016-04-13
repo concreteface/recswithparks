@@ -43,6 +43,7 @@ feature "admin deletes content", js: true do
     login_as(@user)
 
     visit users_path
-    expect(page).to have_content('You lack the necessary permission to view this page')
+    expect(page).to have_content("You lack the necessary\
+     permission to view this page")
   end
 end
