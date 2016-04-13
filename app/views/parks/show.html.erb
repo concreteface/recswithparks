@@ -19,21 +19,21 @@
           <div>Rating: <%= review.rating %><br>
             Description: <%= review.body %>
           </div>
+          Votes:
           <span class="vote-total">
-            Votes: <%= review.vote_total %>
+            <%= review.vote_total %>
           </span>
-          <div class="button-group">
           <span>
             <%= link_to "Upvote", "#", class: 'button success upvote-link' %>
           </span>
           <span>
             <%= link_to "Downvote", "#", class: 'button alert downvote-link' %>
           </span>
+
         <% if current_user.try(:admin?) %>
         <div class="button tiny alert delete-button" id="review-<%= review.id %>">
           Delete Review
         </div>
-      </div>
       </div>
         <% end %>
       </li>
@@ -41,7 +41,7 @@
     </ul>
     <%= form_for [@park, @review] do |f| %>
     <div class="row">
-      <div class="small-4 medium-2 large-1 columns"
+      <div class="small-4 medium-2 large-1 columns">
         <%= f.label :rating %>
         <%= f.select :rating, options_for_select(@ratings_options) %>
       </div>
