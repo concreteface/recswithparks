@@ -65,7 +65,14 @@ var deleteRecord = function(element) {
     });
 };
 
+var searchToggle = function(){
+
+};
+
 $(function() {
+
+    $('#searchBar').hide();
+    $('#searchToggle').show();
 
     $('.upvote-link').click(function(event) {
         event.preventDefault();
@@ -80,6 +87,12 @@ $(function() {
     $('.delete-button').click(function() {
         deleteRecord($(this));
     });
+
+    $('#searchToggle').click(function(event){
+      event.preventDefault();
+      $('#searchBar').show('slow');
+      $(this).hide('slow');
+    })
 
 });
 
