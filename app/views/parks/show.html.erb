@@ -36,7 +36,7 @@
     <%= form_for [@park, @review] do |f| %>
     <div class="row">
       <%= f.label :rating %>
-      <%= f.select :rating, options_for_select(@ratings_options) %>
+      <%= f.select :rating, options_for_select(Park::RATINGS_OPTIONS) %>
     </div>
     <div>
       <%= f.label :body %>

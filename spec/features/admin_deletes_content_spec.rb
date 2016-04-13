@@ -38,4 +38,12 @@ feature "admin deletes content", js: true do
     find("div#user-#{@user.id}").click
     expect(page).to_not have_content(@user.email)
   end
+
+  scenario "non admin user can't access page" do
+    login_as(@user)
+
+    visit users_path
+    expect(page).to have_content("You lack the necessary\
+     permission to view this page")
+  end
 end

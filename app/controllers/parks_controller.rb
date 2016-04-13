@@ -9,7 +9,6 @@ class ParksController < ApplicationController
     @park = Park.find(params[:id])
     @reviews = @park.reviews
     @review = Review.new
-    @ratings_options = [1, 2, 3, 4, 5]
   end
 
   def new
