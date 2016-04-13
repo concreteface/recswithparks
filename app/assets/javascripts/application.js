@@ -67,6 +67,10 @@ var deleteRecord = function(element) {
 
 $(function() {
 
+    $('#searchBar').hide();
+    $('#searchToggle').show();
+    $('#qaSearchButton').css('display: none;');
+
     $('.upvote-link').click(function(event) {
         event.preventDefault();
         vote(true, $(this));
@@ -79,6 +83,13 @@ $(function() {
 
     $('.delete-button').click(function() {
         deleteRecord($(this));
+    });
+
+    $('#searchToggle').click(function(event){
+      event.preventDefault();
+      $('#searchBar').show('slow');
+      $('#qaSearchButton').remove();
+      $(this).hide('slow');
     });
 
 });
