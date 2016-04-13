@@ -65,15 +65,11 @@ var deleteRecord = function(element) {
     });
 };
 
-var searchToggle = function(){
-
-};
-
 $(function() {
 
     $('#searchBar').hide();
     $('#searchToggle').show();
-    $('#qaSearchButton').css("display: none;");
+    $('#qaSearchButton').css('display: none;');
 
     $('.upvote-link').click(function(event) {
         event.preventDefault();
@@ -94,7 +90,7 @@ $(function() {
       $('#searchBar').show('slow');
       $('#qaSearchButton').remove();
       $(this).hide('slow');
-    })
+    });
 
 });
 
