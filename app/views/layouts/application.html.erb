@@ -13,7 +13,7 @@
 
   <body class="content-splash">
       <!-- Small Navigation -->
-      <div class="title-bar transparent" data-responsive-toggle="nav-menu" data-hide-for="medium">
+      <div class="title-bar transparent">
         <%= link_to image_tag("http://placehold.it/50x50/6ea53b/ffffff?text=RWP"), root_path, class: "logo-small show-for-small-only" %>
       </div>
       <!-- Medium-Up Navigation -->
@@ -45,7 +45,7 @@
             <li><img src="<%= current_user.avatar.url %>" height="25" width="25"></li>
             <li><%= link_to current_user.email, user_path(current_user) %></li>
             <li><%= link_to 'Sign Out', destroy_user_session_path, method: 'DELETE', confirm: 'You sure?' %></li>
-            <% elsif !(current_page?(controller: 'devise/registrations', action: 'new') or current_page?(controller: 'devise/sessions', action: 'new')) %>
+            <% else %>
             <li><%= link_to 'Sign in', new_user_session_path %></li>
             <li><%= link_to 'Sign up', new_user_registration_path %></li>
             <% end %>
@@ -55,8 +55,8 @@
       <div class="container">
         <div class="row">
           <div class="column">
+            <br>
             <div class="not-transparent panel callout">
-              <br>
             <p class="notice"><%= notice %></p>
             <p class="alert"><%= alert %></p>
             <%= yield %>
