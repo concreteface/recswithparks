@@ -14,12 +14,12 @@
   <body class="content-splash">
 
       <!-- Small Navigation -->
-      <div class="title-bar transparent" data-responsive-toggle="nav-menu" data-hide-for="medium">
+      <!-- <div class="title-bar transparent" data-responsive-toggle="nav-menu" data-hide-for="medium">
         <%= link_to image_tag("http://placehold.it/50x50/6ea53b/ffffff?text=RWP"), root_path, class: "logo-small show-for-small-only" %>
         <button class="menu-icon" type="button" data-toggle>
           Menu
         </button>
-      </div>
+      </div> -->
 
       <!-- Medium-Up Navigation -->
       <nav class="top-bar transparent" id="nav-menu">
@@ -34,7 +34,11 @@
         <div class="top-bar-left">
           <ul class="vertical medium-horizontal menu">
             <li>
-              <a href="#">Search</a>
+              <%= form_tag search_parks_path(:query), method: 'GET' do  %>
+                <%= text_field_tag :query %>
+                <%= submit_tag 'Search' %>
+              <% end %>
+              <!-- <a href="#">Search</a> -->
             </li>
             <li>
               <%= link_to "Parks", parks_path %>

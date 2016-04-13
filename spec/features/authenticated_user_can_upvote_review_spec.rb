@@ -12,7 +12,7 @@ feature 'authenticated user is able to up/downvote a review', js: true do
 
   scenario 'authenticated user can upvote a review' do
     login_as(@user)
-    visit "/parks/#{@park.id}"
+    visit park_path(@park)
     within("\#vote-for-#{@first_review.id}") do
       expect(page).to have_content(0)
 
