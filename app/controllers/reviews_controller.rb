@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_filter :authenticate_user!
-  RATINGS_OPTIONS = [1, 2, 3, 4, 5]
+  RATINGS_OPTIONS = [1, 2, 3, 4, 5].freeze
   def create
     @park = Park.find(params[:park_id])
     @review = Review.new(review_params)
