@@ -12,43 +12,35 @@
   </head>
 
   <body class="content-splash">
-
       <!-- Small Navigation -->
-      <!-- <div class="title-bar transparent" data-responsive-toggle="nav-menu" data-hide-for="medium">
+      <div class="title-bar transparent" data-responsive-toggle="nav-menu" data-hide-for="medium">
         <%= link_to image_tag("http://placehold.it/50x50/6ea53b/ffffff?text=RWP"), root_path, class: "logo-small show-for-small-only" %>
-        <button class="menu-icon" type="button" data-toggle>
-          Menu
-        </button>
-      </div> -->
-
+      </div>
       <!-- Medium-Up Navigation -->
       <nav class="top-bar transparent" id="nav-menu">
-
         <div class="logo-wrapper hide-for-small-only">
           <div class="logo">
             <%= link_to image_tag("http://placehold.it/350x150/6ea53b/ffffff?text=RWP"), root_path %>
           </div>
         </div>
-
         <!-- Left Nav Section -->
         <div class="top-bar-left">
-          <ul class="vertical medium-horizontal menu">
+          <ul class="menu">
             <li>
-              <%= form_tag search_parks_path(:query), method: 'GET' do  %>
-                <%= text_field_tag :query %>
-                <%= submit_tag 'Search' %>
+              <%= form_tag search_parks_path(:query), method: 'GET', id: 'searchBar'  do  %>
+                <%= text_field_tag :query, "", placeholder: 'Search...', id: "query" %>
+                <%= submit_tag 'Search', id: "qaSearchButton" %>
               <% end %>
-              <!-- <a href="#">Search</a> -->
+              <a href="#" id="searchToggle" style="display: none;">Search</a>
             </li>
             <li>
               <%= link_to "Parks", parks_path %>
             </li>
           </ul>
         </div>
-
         <!-- Right Nav Section -->
         <div class="top-bar-right">
-          <ul class="vertical medium-horizontal menu">
+          <ul class="menu">
             <% if user_signed_in? %>
             <li><img src="<%= current_user.avatar.url %>" height="25" width="25"></li>
             <li><%= link_to current_user.email, user_path(current_user) %></li>
@@ -59,20 +51,18 @@
             <% end %>
           </ul>
         </div>
-
       </nav>
-
       <div class="container">
         <div class="row">
           <div class="column">
-
+            <div class="not-transparent panel callout">
+              <br>
             <p class="notice"><%= notice %></p>
             <p class="alert"><%= alert %></p>
-
             <%= yield %>
           </div>
         </div>
       </div>
-
+    </div>
   </body>
 </html>

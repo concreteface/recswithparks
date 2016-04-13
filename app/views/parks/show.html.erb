@@ -1,50 +1,59 @@
-<div class="not-transparent panel callout radius">
-  <h3>
+  <h4>
     <%= @park.name %>
-  </h3>
-  <h4>Street -
+  </h4>
+  <h4>
     <%= @park.street %>
   </h4>
-  <h3>
+  <h4>
     Rating
     <%= @park.rating %>
-    <h3>
+    <h4>
       <%= @park.description %>
-    <h3>
+    <h4>
       Reviews
-    </h3>
-    <ul>
+    </h4>
+    <ul style="list-style: none;">
       <% @reviews.each do |review| %>
       <li>
         <div class="vote-block" id="vote-for-<%= review.id %>">
-          <span>
-            <%= link_to "Upvote", "#", class: 'upvote-link' %>
+          <div>Rating: <%= review.rating %><br>
+            Description: <%= review.body %>
+          </div>
+          <span class="vote-total">
+            Votes: <%= review.vote_total %>
           </span>
-          <span class="vote-total"><%= review.vote_total %></span>
+          <div class="button-group">
           <span>
-            <%= link_to "Downvote", "#", class: 'downvote-link' %>
+            <%= link_to "Upvote", "#", class: 'button success upvote-link' %>
           </span>
-        </div>
-        <%= review.rating %>
-        <%= review.body %>
+          <span>
+            <%= link_to "Downvote", "#", class: 'button alert downvote-link' %>
+          </span>
         <% if current_user.try(:admin?) %>
-        <div class="button alert delete-button" id="review-<%= review.id %>">Delete</div>
+        <div class="button tiny alert delete-button" id="review-<%= review.id %>">
+          Delete Review
+        </div>
+      </div>
+      </div>
         <% end %>
       </li>
       <% end %>
     </ul>
     <%= form_for [@park, @review] do |f| %>
     <div class="row">
-      <%= f.label :rating %>
-      <%= f.select :rating, options_for_select(@ratings_options) %>
+      <div class="small-4 medium-2 large-1 columns"
+        <%= f.label :rating %>
+        <%= f.select :rating, options_for_select(@ratings_options) %>
+      </div>
     </div>
-    <div>
+    <div class="row">
+    <div class="small-12, medium-12, large-10 columns">
       <%= f.label :body %>
       <%= f.text_area :body %>
     </div>
-    <div class="actions">
+  </div>
+      <div class="actions">
       <%= f.submit "Add Review" %>
     </div>
     <% end  %>
   </div>
-</div>

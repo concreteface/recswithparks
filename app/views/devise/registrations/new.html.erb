@@ -1,4 +1,4 @@
-<h2>Sign up</h2>
+<h3>Sign up</h3>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -22,7 +22,7 @@
   </div>
 
   <div class="field">
-    <%= f.label(:avatar, "Avatar URL") %>
+    <%= f.label(:avatar, "Avatar") %>
     <%= f.file_field :avatar %>
   </div>
 
@@ -30,5 +30,3 @@
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
