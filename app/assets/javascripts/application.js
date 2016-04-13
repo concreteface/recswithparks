@@ -73,6 +73,7 @@ $(function() {
 
     $('#searchBar').hide();
     $('#searchToggle').show();
+    $('#qaSearchButton').css("display: none;");
 
     $('.upvote-link').click(function(event) {
         event.preventDefault();
@@ -91,6 +92,7 @@ $(function() {
     $('#searchToggle').click(function(event){
       event.preventDefault();
       $('#searchBar').show('slow');
+      $('#qaSearchButton').remove();
       $(this).hide('slow');
     })
 

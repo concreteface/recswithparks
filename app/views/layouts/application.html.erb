@@ -35,7 +35,8 @@
           <ul class="vertical medium-horizontal menu">
             <li>
               <%= form_tag search_parks_path(:query), method: 'GET', id: 'searchBar'  do  %>
-                <%= text_field_tag :query, "", placeholder: 'Search...' %>
+                <%= text_field_tag :query, "", placeholder: 'Search...', id: "query" %>
+                <%= submit_tag 'Search', id: "qaSearchButton" %>
               <% end %>
               <a href="#" id="searchToggle" style="display: none;">Search</a>
             </li>
