@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
       redirect_to park_path(@park)
     else
       @reviews = @park.reviews
-      flash[:notice] = @review.errors.full_messages.join(", ")
+      flash[:alert] = @review.errors.full_messages.join(", ")
       render 'parks/show'
     end
   end

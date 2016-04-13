@@ -57,8 +57,12 @@
           <div class="column">
             <br>
             <div class="not-transparent panel callout">
-            <div data-alert class="alert-box success"><%= notice %></div>
-            <div class="alert"><%= alert %></div>
+              <% if notice %>
+            <div class="callout success">
+              <%= notice %></div>
+              <% elsif alert %>
+            <div class="callout alert"><%= alert %></div>
+            <% end %>
             <%= yield %>
           </div>
         </div>
