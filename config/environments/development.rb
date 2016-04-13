@@ -30,8 +30,7 @@ Rails.application.configure do
     host: "localhost",
     port: 3000
   }
-
-
+  
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
@@ -40,7 +39,7 @@ Rails.application.configure do
     user_name:            ENV['GMAIL_NAME'],
     password:             ENV['GMAIL_PASSWORD'],
     authentication:       'plain',
-  enable_starttls_auto: true  }
+    enable_starttls_auto: true }
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
