@@ -12,7 +12,9 @@ class ReviewsController < ApplicationController
       flash[:notice] = "Your review has been added successfully."
       redirect_to park_path(@park)
     else
-      flash[:notice] = @reviews.errors.full_messages.join(", ")
+      @reviews = @park.reviews
+      @ratings_options = [1, 2, 3, 4, 5]
+      flash[:notice] = @review.errors.full_messages.join(", ")
       render 'parks/show'
     end
   end

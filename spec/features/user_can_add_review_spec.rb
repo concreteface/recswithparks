@@ -22,4 +22,16 @@ feature "add review" do
     expect(page).to have_content(5)
     expect(page).to have_content(3.5)
   end
+
+  scenario 'user enter invalid form' do
+    login_as(@user)
+
+    visit park_path(@park)
+
+    select(5, from: 'Rating')
+
+    click_button 'Add Review'
+
+    expect(page).to have_content("Body can't be blank")
+  end
 end
