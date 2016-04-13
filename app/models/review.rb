@@ -2,6 +2,7 @@ class Review < ActiveRecord::Base
   belongs_to :user
   belongs_to :park
   has_many :votes
+  validates :body, presence: true
 
   def vote_total
     upvotes_count = votes.pluck(:upvote).count { |vote| vote }

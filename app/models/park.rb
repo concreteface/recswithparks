@@ -7,6 +7,7 @@ class Park < ActiveRecord::Base
 
   paginates_per 10
   max_paginates_per 10
+  RATINGS_OPTIONS = [1, 2, 3, 4, 5].freeze
 
   def rating
     rating = 0.0

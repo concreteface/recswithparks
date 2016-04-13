@@ -42,10 +42,10 @@
     <%= form_for [@park, @review] do |f| %>
     <div class="row">
       <div class="small-4 medium-2 large-1 columns">
-        <%= f.label :rating %>
-        <%= f.select :rating, options_for_select(@ratings_options) %>
-      </div>
+      <%= f.label :rating %>
+      <%= f.select :rating, options_for_select(Park::RATINGS_OPTIONS) %>
     </div>
+  </div>
     <div class="row">
     <div class="small-12, medium-12, large-10 columns">
       <%= f.label :body %>

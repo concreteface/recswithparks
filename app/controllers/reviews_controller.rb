@@ -1,6 +1,5 @@
 class ReviewsController < ApplicationController
   before_filter :authenticate_user!
-
   def create
     @park = Park.find(params[:park_id])
     @review = Review.new(review_params)
@@ -12,7 +11,8 @@ class ReviewsController < ApplicationController
       flash[:notice] = "Your review has been added successfully."
       redirect_to park_path(@park)
     else
-      flash[:notice] = @reviews.errors.full_messages.join(", ")
+      @reviews = @park.reviews
+      flash[:notice] = @review.errors.full_messages.join(", ")
       render 'parks/show'
     end
   end
