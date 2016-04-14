@@ -7,7 +7,7 @@
 <dl>
   <h4>Your Reviews:</h4>
   <% @reviews.each do |review| %>
-    <dt>Park Name: <%= review.park.name %></li>
+    <dt>Park Name: <%= link_to review.park.name, park_path(review.park) %></li>
     <dd>
       <li>Review: <%= review.body %></li>
     </dd>
