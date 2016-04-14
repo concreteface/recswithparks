@@ -1,11 +1,9 @@
-<div class="not-transparent panel callout radius">
-  <h1>Viewing all users</h1>
-  <ul>
-    <% @users.each do |user| %>
-      <li>
-        <%= link_to user.email, user %>
-        <div class="button alert delete-button" id="user-<%= user.id %>">Delete User</div>
-      </li>
-    <% end %>
-  </ul>
-</div>
+<h3>Viewing all users</h3>
+<ul style="list-style: none;">
+  <% @users.each do |user| %>
+    <li>
+      <%= link_to user.email, user %>
+      <div class="button alert delete-button" id="user-<%= user.id %>">Delete User</div>
+    </li>
+  <% end %>
+</ul>

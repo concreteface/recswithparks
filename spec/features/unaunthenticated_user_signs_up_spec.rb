@@ -7,6 +7,11 @@ require 'rails_helper'
 # []User can update information
 # []User can delete account
 feature "unauthenticated user can create account" do
+  before(:all) do
+    clear_species
+    clear_users
+    Species.create( [{ name: "human", thumbnail: "/assets/human.png" }] )
+  end
   scenario "visit new user page" do
     visit '/users/sign_up'
 
@@ -15,6 +20,7 @@ feature "unauthenticated user can create account" do
     fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'password'
     attach_file :user_avatar, "#{Rails.root}/goats_avatar.jpg"
+    select 'human', from: 'user[species_id]'
     click_button 'Sign up'
 
     expect(page).to have_content('yo@ho.com')

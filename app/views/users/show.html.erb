@@ -1,22 +1,27 @@
-<div class="not-transparent panel callout radius">
-  <h1> <%= @user.email %> </h1>
+  <h3> <%= @user.email %> </h3>
+  <div class="row">
   <% if @user.avatar.url %>
-  <div class="avatar-resize">
+
+  <div class="avatar-resize column">
     <img src="<%= @user.avatar.url %>" />
   </div>
   <% end %>
-
-  <div class="species-thumbnail">
+  <div class="species-thumbnail column end">
     <img src="<%= @user.species.thumbnail %>" />
   </div>
+</div>
+  <div class="row">
+  <div class="column">
   <dl>
-    <h3>Your Reviews</h3>
+    <h2>Your Reviews</h2>
     <% @reviews.each do |review| %>
-      <dt>Park Name: <%= review.park.name %></li>
+      <dt>
+        Park Name: <%= review.park.name %>
+      </dt>
       <dd>
-        <li>Review: <%= review.body %></li>
+        Review: <%= review.body %>
       </dd>
-    </dt>
   <% end %>
   </dl>
+</div>
 </div>

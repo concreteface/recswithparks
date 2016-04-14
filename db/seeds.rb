@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+FactoryGirl.create(:user, email: 'admin@test.com', password: 'password', admin: true)
 user1 = FactoryGirl.create(:user)
 user2 = FactoryGirl.create(:user)
 park1 = FactoryGirl.create(:park)
@@ -16,7 +16,7 @@ Review.create([{ rating: 2, body: 'Cool park 3', user: user2, park: park1 }])
 Review.create([{ rating: 1, body: 'Cool park 4', user: user2, park: park2 }])
 Species.create( [{ name: "human", thumbnail: "/assets/human.png" }] )
 Species.create( [{ name: "duck", thumbnail: "/assets/duck.png" }] )
-Species.create( [{ name: "dog:", thumbnail: "/assets/dog.png" }] )
+Species.create( [{ name: "dog", thumbnail: "/assets/dog.png" }] )
 Species.create( [{ name: "cat", thumbnail: "/assets/cat.png" }] )
 Species.create( [{ name: "bird", thumbnail: "/assets/bird.png" }] )
 Species.create( [{ name: "halcyon", thumbnail: "/assets/halcyon.png" }] )
