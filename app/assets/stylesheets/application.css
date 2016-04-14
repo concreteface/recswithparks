@@ -27,3 +27,13 @@
     background-size: cover;
     margin-top: 0px;
  }
+
+ .avatar-resize {
+   height: 150px;
+   width: 150px;
+ }
+
+ .species-thumbnail {
+   height: 100px;
+   width: 100px;
+ }
