@@ -1,16 +1,16 @@
-<div class="not-transparent panel callout radius">
-  <h1> <%= @user.email %> </h1>
-  <div>
-    <img src="<%= @user.avatar.url %>" height="200" width="200">
-  </div>
-  <dl>
-    <h3>Your Reviews</h3>
-    <% @reviews.each do |review| %>
-      <dt>Park Name: <%= review.park.name %></li>
-      <dd>
-        <li>Review: <%= review.body %></li>
-      </dd>
-    </dt>
-  <% end %>
-  </dl>
+<div>
+  <img src="<%= @user.avatar.url %>" height="200" width="200">
+  <h3>
+    <%= @user.email %>
+  </h3>
 </div>
+<dl>
+  <h4>Your Reviews:</h4>
+  <% @reviews.each do |review| %>
+    <dt>Park Name: <%= review.park.name %></li>
+    <dd>
+      <li>Review: <%= review.body %></li>
+    </dd>
+  </dt>
+  <% end %>
+</dl>

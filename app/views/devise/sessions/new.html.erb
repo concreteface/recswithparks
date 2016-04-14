@@ -1,6 +1,4 @@
-<div class="not-transparent panel callout radius">
   <h2>Log in</h2>
-
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
       <%= f.label :email %><br />
@@ -22,7 +20,5 @@
     <div class="actions">
       <%= f.submit "Log in" %>
     </div>
-  <% end %>
-</div>
 
-<%= render "devise/shared/links" %>
+    <% end -%>
