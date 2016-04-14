@@ -84,12 +84,13 @@ ul {
 
 .mobile-menu {
   text-align: center;
+
+  .mobile-menu li {
+    display: inline;
+    padding: 10px;
+  }
 }
 
-.mobile-menu li {
-  display: inline;
-  padding: 10px;
-}
 
 .button {
   background: $button-green;
