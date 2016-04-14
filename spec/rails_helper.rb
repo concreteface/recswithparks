@@ -34,3 +34,7 @@ end
 def clear_parks
   Park.delete_all
 end
+
+def clear_species
+  Species.delete_all
+end 
