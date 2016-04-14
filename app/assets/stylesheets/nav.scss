@@ -5,8 +5,11 @@ $logo-width: 118px;
 $logo-padding: $logo-width - 20px;
 // Leave alone
 $logo-margin: - ($logo-width / 2);
-$transparent-green: rgba(110, 165, 56, 0.5);
+
+$transparent-green: rgba(110, 165, 59, 0.4);
+
 $not-transparent-green: rgba(255, 255, 255, 0.8);
+$button-green: rgba(110, 165, 59, 0.8);
 
 .transparent {
   background: $transparent-green;
@@ -69,4 +72,31 @@ $not-transparent-green: rgba(255, 255, 255, 0.8);
       float: right;
     }
   }
+}
+
+.pagination a {
+  display: inline;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.mobile-menu {
+  text-align: center;
+
+  .mobile-menu li {
+    display: inline;
+    padding: 10px;
+  }
+}
+
+.button {
+  background: $button-green;
+  display: inline-block;
+}
+
+.button:hover,
+.button:focus {
+  background: $button-green;
 }

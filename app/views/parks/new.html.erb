@@ -12,6 +12,7 @@
     <%= f.label :description %>
     <%= f.text_area :description %>
 
-    <%= f.submit "Submit" %>
+    <%= f.submit "Submit", class: 'button'%>
   <% end %>
+  <%= link_to 'Cancel', :back, class: 'button' %>
 </div>
