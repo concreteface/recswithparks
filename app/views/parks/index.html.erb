@@ -10,7 +10,8 @@
     <% end %>
   </ul>
   <%= paginate @parks %>
+  <%= link_to "Add New Park", new_park_path, class: 'button' %>
   <div class="sidebar-right" style="float: left;">
-    <%= link_to "Add New Park", new_park_path, class: 'button' %>
+    
   </div>
   <br>
