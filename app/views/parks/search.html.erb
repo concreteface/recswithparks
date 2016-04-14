@@ -1,12 +1,14 @@
-  <% if @search_results.empty? %>
-  <span>Sorry, no results found for '<%= @query %>'
+<% if @search_results.empty? %>
+  <span>
+    Sorry, no results found for '<%= @query %>'
   </span>
 <% else %>
-  <h3>Results for '<%= @query %>':</h3>
+  <h3>
+    Results for '<%= @query %>':
+  </h3>
   <ul>
     <% @search_results.each do |park| %>
-    <li><%= link_to park.name, park %></li>
+      <li><%= link_to park.name, park %></li>
     <% end %>
   </ul>
-  <% end %>
-</div>
+<% end %>
