@@ -1,16 +1,27 @@
-<div>
-  <img src="<%= @user.avatar.url %>" height="200" width="200">
-  <h3>
-    <%= @user.email %>
-  </h3>
-</div>
-<dl>
-  <h4>Your Reviews:</h4>
-  <% @reviews.each do |review| %>
-    <dt>Park Name: <%= link_to review.park.name, park_path(review.park) %></li>
-    <dd>
-      <li>Review: <%= review.body %></li>
-    </dd>
-  </dt>
+  
+<h3> <%= @user.email %> </h3>
+<div class="row">
+  <% if @user.avatar.url %>
+    <div class="avatar-resize column">
+      <img src="<%= @user.avatar.url %>" />
+    </div>
   <% end %>
-</dl>
+  <div class="species-thumbnail column end">
+    <img src="<%= @user.species.thumbnail %>" />
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    <dl>
+      <h2>Your Reviews</h2>
+      <% @reviews.each do |review| %>
+        <dt>
+          Park Name: <%= link_to review.park.name, park_path(review.park) %>
+        </dt>
+        <dd>
+          Review: <%= review.body %>
+        </dd>
+      <% end %>
+    </dl>
+  </div>
+</div>

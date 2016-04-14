@@ -22,13 +22,13 @@ $button-green: rgba(110, 165, 59, 0.8);
 //* Small Navigation */
 .logo-small {
   float: right;
+  padding-top: 3px;
 }
 
 .title-bar {
   padding: 0.5rem;
 }
 
-.menu-icon,
 .title-bar-title {
   position: relative;
   top: 10px;
@@ -45,8 +45,7 @@ $button-green: rgba(110, 165, 59, 0.8);
       margin-left: $logo-margin;
       position: absolute;
       right: 50%;
-      top: 25%;
-      bottom: 0%;
+      top: -6.5px;
       width: $logo-width;
     }
   }
@@ -94,6 +93,7 @@ ul {
 .button {
   background: $button-green;
   display: inline-block;
+  margin: 8px;
 }
 
 .button:hover,
