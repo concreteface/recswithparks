@@ -32,7 +32,7 @@
           <% end %>
           <%= form_tag search_parks_path(:query), method: 'GET' do  %>
             <%= text_field_tag :query, "", placeholder: 'Search...', id: "query" %>
-            <%= submit_tag 'Search' %>
+            <%= submit_tag 'Search', class: 'button' %>
           <% end %>
           <a href="#" style="display: none;">Search</a>
         </div>
@@ -79,21 +79,25 @@
       </ul>
     </div>
 
-  </nav>
-
-  <div class="container">
-    <div class="row">
-      <div class="column">
-
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-
-        <%= yield %>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="column">
+          <br>
+          <div class="not-transparent panel callout">
+            <% if notice %>
+          <div class="callout success">
+            <%= notice %></div>
+            <% elsif alert %>
+          <div class="callout alert"><%= alert %></div>
+          <% end %>
+          <%= yield %>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <script>
-    $(document).foundation();
-  </script>
-</body>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
 </html>

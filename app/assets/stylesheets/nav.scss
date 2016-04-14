@@ -1,15 +1,23 @@
 //* Variables */
-
 // Adjust width accordingly (use even #'s)
 $logo-width: 118px;
 // Reduce px value to increase space between logo and menu text
-$logo-padding: $logo-width - 32px;
+$logo-padding: $logo-width - 20px;
 // Leave alone
 $logo-margin: - ($logo-width / 2);
 
 $transparent-green: rgba(110, 165, 59, 0.4);
+
 $not-transparent-green: rgba(255, 255, 255, 0.8);
 $button-green: rgba(110, 165, 59, 0.8);
+
+.transparent {
+  background: $transparent-green;
+}
+
+.not-transparent {
+  background: $not-transparent-green;
+}
 
 //* Small Navigation */
 .logo-small {
@@ -33,12 +41,12 @@ $button-green: rgba(110, 165, 59, 0.8);
     position: relative;
 
     .logo {
-      height: 92px;
       left: 50%;
       margin-left: $logo-margin;
       position: absolute;
       right: 50%;
-      top: -6px;
+      top: 25%;
+      bottom: 0%;
       width: $logo-width;
     }
   }
@@ -90,7 +98,6 @@ ul {
     padding: 10px;
   }
 }
-
 
 .button {
   background: $button-green;
