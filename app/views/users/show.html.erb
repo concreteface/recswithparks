@@ -1,7 +1,13 @@
 <div class="not-transparent panel callout radius">
   <h1> <%= @user.email %> </h1>
-  <div>
-    <img src="<%= @user.avatar.url %>" height="200" width="200">
+  <% if @user.avatar.url %>
+  <div class="avatar-resize">
+    <img src="<%= @user.avatar.url %>" />
+  </div>
+  <% end %>
+
+  <div class="species-thumbnail">
+    <img src="<%= @user.species.thumbnail %>" />
   </div>
   <dl>
     <h3>Your Reviews</h3>

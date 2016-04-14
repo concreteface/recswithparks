@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
     :recoverable, :rememberable, :trackable, :validatable
   has_many :parks
   has_many :reviews
+  belongs_to :species 
 
   def vote(vote, review)
     previous_vote = Vote.find_by(user: self, review: review)
