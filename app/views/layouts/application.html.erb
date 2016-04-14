@@ -13,66 +13,87 @@
 
   <body class="content-splash">
 
-      <!-- Small Navigation -->
-      <!-- <div class="title-bar transparent" data-responsive-toggle="nav-menu" data-hide-for="medium">
-        <%= link_to image_tag("http://placehold.it/50x50/6ea53b/ffffff?text=RWP"), root_path, class: "logo-small show-for-small-only" %>
-        <button class="menu-icon" type="button" data-toggle>
-          Menu
-        </button>
-      </div> -->
-
-      <!-- Medium-Up Navigation -->
-      <nav class="top-bar transparent" id="nav-menu">
-
-        <div class="logo-wrapper hide-for-small-only">
-          <div class="logo">
-            <%= link_to image_tag("http://placehold.it/350x150/6ea53b/ffffff?text=RWP"), root_path %>
-          </div>
-        </div>
-
-        <!-- Left Nav Section -->
-        <div class="top-bar-left">
-          <ul class="vertical medium-horizontal menu">
-            <li>
-              <%= form_tag search_parks_path(:query), method: 'GET', id: 'searchBar'  do  %>
-                <%= text_field_tag :query, "", placeholder: 'Search...', id: "query" %>
-                <%= submit_tag 'Search', id: "qaSearchButton" %>
-              <% end %>
-              <a href="#" id="searchToggle" style="display: none;">Search</a>
-            </li>
-            <li>
-              <%= link_to "Parks", parks_path %>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Right Nav Section -->
-        <div class="top-bar-right">
-          <ul class="vertical medium-horizontal menu">
-            <% if user_signed_in? %>
-            <li><img src="<%= current_user.avatar.url %>" height="25" width="25"></li>
-            <li><%= link_to current_user.email, user_path(current_user) %></li>
+    <!-- Small Navigation -->
+    <div class="title-bar transparent show-for-small-only" data-responsive-toggle="nav-menu" data-hide-for="medium">
+      <%= link_to image_tag("http://placehold.it/50x50/6ea53b/ffffff?text=RWP"), root_path, class: "logo-small show-for-small-only" %>
+      <button class="button" type="button" data-toggle="example-dropdown">Menu</button>
+      <div class="dropdown-pane" id="example-dropdown" data-dropdown data-auto-focus="true">
+        <div class="row">
+          <div class="medium-6 columns">
+          <li>
+            <%= link_to "Parks", parks_path %>
+          </li>
+          <% if user_signed_in? %>
+            <li><img src="<%= current_user.avatar.url %>" height="25" width="25"> <%= link_to current_user.email, user_path(current_user) %></li>
             <li><%= link_to 'Sign Out', destroy_user_session_path, method: 'DELETE', confirm: 'You sure?' %></li>
-            <% elsif !(current_page?(controller: 'devise/registrations', action: 'new') or current_page?(controller: 'devise/sessions', action: 'new')) %>
+          <% elsif !(current_page?(controller: 'devise/registrations', action: 'new') or current_page?(controller: 'devise/sessions', action: 'new')) %>
             <li><%= link_to 'Sign in', new_user_session_path %></li>
             <li><%= link_to 'Sign up', new_user_registration_path %></li>
-            <% end %>
-          </ul>
-        </div>
-
-      </nav>
-
-      <div class="container">
-        <div class="row">
-          <div class="column">
-
-            <p class="notice"><%= notice %></p>
-            <p class="alert"><%= alert %></p>
-
-            <%= yield %>
-          </div>
+          <% end %>
+          <%= form_tag search_parks_path(:query), method: 'GET' do  %>
+            <%= text_field_tag :query, "", placeholder: 'Search...', id: "query" %>
+            <%= submit_tag 'Search' %>
+          <% end %>
+          <a href="#" style="display: none;">Search</a>
         </div>
       </div>
+    </div>
+  </div>
 
-  </body>
+  <!-- Medium-Up Navigation -->
+  <nav class="top-bar transparent hide-for-small-only" id="nav-menu">
+
+    <div class="logo-wrapper hide-for-small-only">
+      <div class="logo">
+        <%= link_to image_tag("http://placehold.it/350x150/6ea53b/ffffff?text=RWP"), root_path %>
+      </div>
+    </div>
+
+    <!-- Left Nav Section -->
+    <div class="top-bar-left hide-for-small-only">
+      <ul class="vertical medium-horizontal menu">
+        <li>
+          <%= form_tag search_parks_path(:query), method: 'GET', id: 'searchBar'  do  %>
+          <%= text_field_tag :query, "", placeholder: 'Search...', id: "query" %>
+          <%= submit_tag 'Search', id: "qaSearchButton" %>
+          <% end %>
+          <a href="#" id="searchToggle" style="display: none;">Search</a>
+        </li>
+        <li>
+          <%= link_to "Parks", parks_path %>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Right Nav Section -->
+    <div class="top-bar-right hide-for-small-only">
+      <ul class="vertical medium-horizontal menu">
+        <% if user_signed_in? %>
+        <li><img src="<%= current_user.avatar.url %>" height="25" width="25"></li>
+        <li><%= link_to current_user.email, user_path(current_user) %></li>
+        <li><%= link_to 'Sign Out', destroy_user_session_path, method: 'DELETE', confirm: 'You sure?' %></li>
+        <% elsif !(current_page?(controller: 'devise/registrations', action: 'new') or current_page?(controller: 'devise/sessions', action: 'new')) %>
+        <li><%= link_to 'Sign in', new_user_session_path %></li>
+        <li><%= link_to 'Sign up', new_user_registration_path %></li>
+        <% end %>
+      </ul>
+    </div>
+
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="column">
+
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(document).foundation();
+  </script>
+</body>
 </html>
