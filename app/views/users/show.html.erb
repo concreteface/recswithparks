@@ -7,7 +7,9 @@
     </div>
   <% end %>
   <div class="species-thumbnail column end">
+  <% if @user.species %>
     <img src="<%= @user.species.thumbnail %>" />
+    <% end %>
   </div>
 </div>
 <div class="row">
