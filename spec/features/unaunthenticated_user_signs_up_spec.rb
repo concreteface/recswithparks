@@ -10,7 +10,7 @@ feature "unauthenticated user can create account" do
   before(:all) do
     clear_species
     clear_users
-    Species.create( [{ name: "human", thumbnail: "/assets/human.png" }] )
+    Species.create([{ name: "human", thumbnail: "/assets/human.png" }])
   end
   scenario "visit new user page" do
     visit '/users/sign_up'
