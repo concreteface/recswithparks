@@ -26,7 +26,7 @@
           <% if user_signed_in? %>
             <li><img src="<%= current_user.avatar.url %>" height="25" width="25"> <%= link_to current_user.email, user_path(current_user) %></li>
             <li><%= link_to 'Sign Out', destroy_user_session_path, method: 'DELETE', confirm: 'You sure?' %></li>
-          <% elsif !(current_page?(controller: 'devise/registrations', action: 'new') or current_page?(controller: 'devise/sessions', action: 'new')) %>
+          <% else !(current_page?(controller: 'devise/registrations', action: 'new') or current_page?(controller: 'devise/sessions', action: 'new')) %>
             <li><%= link_to 'Sign in', new_user_session_path %></li>
             <li><%= link_to 'Sign up', new_user_registration_path %></li>
           <% end %>
