@@ -120,8 +120,18 @@ ul {
 
 .button.success {
   background: $button-green;
+  background-color: $button-green;
+}
+
+.button.success:hover {
+  background: $button-green;
 }
 
 .button.alert {
+  background: $button-red;
+  background-color: $button-red;
+}
+
+.button.alert:hover {
   background: $button-red;
 }
