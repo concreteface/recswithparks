@@ -59,6 +59,12 @@ $button-green: rgba(110, 165, 59, 0.8);
       background: transparent;
       float: left;
     }
+
+    a {
+      font-size: larger;
+      font-weight: bold;
+      color: #2d3b56;
+    }
   }
 
   // Left part
@@ -69,6 +75,12 @@ $button-green: rgba(110, 165, 59, 0.8);
     ul {
       background: transparent;
       float: right;
+    }
+
+    a {
+      font-size: larger;
+      font-weight: bold;
+      color: #2d3b56;
     }
   }
 }
@@ -94,6 +106,7 @@ ul {
   background: $button-green;
   display: inline-block;
   margin: 8px;
+  font-weight: bold;
 }
 
 .button:hover,
