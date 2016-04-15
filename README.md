@@ -5,7 +5,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/concreteface/recswithparks/badge.svg?branch=master)](https://coveralls.io/github/concreteface/recswithparks?branch=master)
 
 
-![](http://static.thousandwonders.net/Boston.Public.Garden.640.9203.jpg)
+![](https://abigailpadgett.files.wordpress.com/2015/08/boston-ducks.jpg "This is a picture of a park")
 
 ### Description
 ___
