@@ -51,3 +51,7 @@
  .reviewer-info a {
    display: inline;
  }
+
+.top-bar {
+  height: 78px;
+}
