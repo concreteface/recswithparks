@@ -10,6 +10,7 @@ $transparent-green: rgba(110, 165, 59, 0.4);
 
 $not-transparent-green: rgba(255, 255, 255, 0.8);
 $button-green: rgba(110, 165, 59, 0.8);
+$button-red: #d06944;
 
 .transparent {
   background: $transparent-green;
@@ -59,6 +60,11 @@ $button-green: rgba(110, 165, 59, 0.8);
       background: transparent;
       float: left;
     }
+
+    a {
+      font-size: larger;
+      font-weight: bold;
+    }
   }
 
   // Left part
@@ -69,6 +75,11 @@ $button-green: rgba(110, 165, 59, 0.8);
     ul {
       background: transparent;
       float: right;
+    }
+
+    a {
+      font-size: larger;
+      font-weight: bold;
     }
   }
 }
@@ -94,9 +105,18 @@ ul {
   background: $button-green;
   display: inline-block;
   margin: 8px;
+  font-weight: bold;
 }
 
 .button:hover,
 .button:focus {
   background: $button-green;
+}
+
+.button.success {
+  background: $button-green;
+}
+
+.button.alert {
+  background: $button-red;
 }
