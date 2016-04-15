@@ -1,4 +1,4 @@
-  
+
 <h3> <%= @user.email %> </h3>
 <div class="row">
   <% if @user.avatar.url %>
@@ -15,7 +15,7 @@
 <div class="row">
   <div class="column">
     <dl>
-      <h2>Your Reviews</h2>
+      <h4>Your Reviews</h4>
       <% @reviews.each do |review| %>
         <dt>
           Park Name: <%= link_to review.park.name, park_path(review.park) %>

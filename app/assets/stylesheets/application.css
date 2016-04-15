@@ -37,3 +37,17 @@
    height: 100px;
    width: 100px;
  }
+
+ .review-thumbnail {
+   height: 60px;
+   width: 60px;
+   float:left;
+ }
+
+ .reviewer-info img {
+   display: inline;
+ }
+
+ .reviewer-info a {
+   display: inline;
+ }

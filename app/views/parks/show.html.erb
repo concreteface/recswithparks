@@ -5,20 +5,40 @@
     <%= @park.street %>
   </h4>
   <h4>
-    Rating
+    Rating:
+    <% if @reviews.empty? %>
+    Not yet rated
+    <% else %>
     <%= @park.rating %>
+    <% end %>
     <h4>
       <%= @park.description %>
     <h4>
       Reviews
     </h4>
     <ul style="list-style: none;">
+      <% if @reviews.empty? %>
+      <h3>
+        No reviews yet. Let us know what you think...
+      </h3>
+      <% else %>
       <% @reviews.each do |review| %>
       <li>
         <div class="vote-block" id="vote-for-<%= review.id %>">
           <div>Rating: <%= review.rating %><br>
-            Description: <%= review.body %>
+            Description: <%= review.body %> <br>
+            <% if !review.user.nil? %>
+              <div class="reviewer-info">
+                <div class="review-thumbnail">
+                  <%= image_tag(review.user.species.thumbnail) %>
+                </div>
+            <%= link_to review.user.email, review.user %>
           </div>
+            <% else %>
+              User has been deleted.
+            <% end %>
+            </div>
+
           Votes:
           <span class="vote-total">
             <%= review.vote_total %>
@@ -36,9 +56,10 @@
         </div>
       </div>
         <% end %>
-      </li>
+      </li><br/>
       <% end %>
     </ul>
+    <% end %>
     <%= form_for [@park, @review] do |f| %>
     <div class="row">
       <div class="small-4 medium-2 large-1 columns">
