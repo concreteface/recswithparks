@@ -40,6 +40,11 @@ $button-red: #d06944;
 
   .logo-wrapper {
     position: relative;
+    height: 200 px;
+
+  .logo-wrapper img {
+    height: 500 px;
+  }
 
     .logo {
       left: 50%;
