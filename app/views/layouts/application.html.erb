@@ -15,18 +15,18 @@
 
     <!-- Small Navigation -->
     <div class="title-bar transparent show-for-small-only" data-responsive-toggle="nav-menu" data-hide-for="medium">
-      <%= link_to image_tag("http://placehold.it/50x50/6ea53b/ffffff?text=RWP"), root_path, class: "logo-small show-for-small-only" %>
+      <%= link_to image_tag("logo1.png", size: "120x120"), root_path, class: "logo-small show-for-small-only" %>
       <button class="button" type="button" data-toggle="example-dropdown">Menu</button>
       <div class="dropdown-pane" id="example-dropdown" data-dropdown data-auto-focus="true">
         <div class="row">
           <div class="medium-6 columns">
           <li>
-            <%= link_to "Parks", parks_path %>
+            <%= link_to "Home", parks_path %>
           </li>
           <% if user_signed_in? %>
-            <li><img src="<%= current_user.avatar.url %>" height="25" width="25"> <%= link_to current_user.email, user_path(current_user) %></li>
-            <li><%= link_to 'Sign Out', destroy_user_session_path, method: 'DELETE', confirm: 'You sure?' %></li>
-          <% else !(current_page?(controller: 'devise/registrations', action: 'new') or current_page?(controller: 'devise/sessions', action: 'new')) %>
+            <li><%= link_to 'Your Profile', user_path(current_user) %></li>
+            <li><%= link_to 'Sign Out', destroy_user_session_path, confirm: 'You sure?' %></li>
+          <% elsif !(current_page?(controller: 'devise/registrations', action: 'new') or current_page?(controller: 'devise/sessions', action: 'new')) %>
             <li><%= link_to 'Sign in', new_user_session_path %></li>
             <li><%= link_to 'Sign up', new_user_registration_path %></li>
           <% end %>
@@ -45,7 +45,7 @@
 
     <div class="logo-wrapper hide-for-small-only">
       <div class="logo">
-        <%= link_to image_tag("http://placehold.it/350x150/6ea53b/ffffff?text=RWP"), root_path %>
+        <%= link_to image_tag("logo1.png"), root_path %>
       </div>
     </div>
 
@@ -72,7 +72,7 @@
         <li><img src="<%= current_user.avatar.url %>" height="25" width="25"></li>
         <li><%= link_to current_user.email, user_path(current_user) %></li>
         <li><%= link_to 'Sign Out', destroy_user_session_path, method: 'DELETE', confirm: 'You sure?' %></li>
-        <% else !(current_page?(controller: 'devise/registrations', action: 'new') or current_page?(controller: 'devise/sessions', action: 'new')) %>
+        <% elsif !(current_page?(controller: 'devise/registrations', action: 'new') or current_page?(controller: 'devise/sessions', action: 'new')) %>
         <li><%= link_to 'Sign in', new_user_session_path %></li>
         <li><%= link_to 'Sign up', new_user_registration_path %></li>
         <% end %>
