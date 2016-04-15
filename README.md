@@ -5,7 +5,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/concreteface/recswithparks/badge.svg?branch=master)](https://coveralls.io/github/concreteface/recswithparks?branch=master)
 
 
-(Placeholder for homepage screenshot including nice picture of Boston Public Garden)
+(https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwir1p7u_ZDMAhVEaD4KHa-ND2gQjRwIBw&url=http%3A%2F%2Fwww.thousandwonders.net%2FBoston%2BPublic%2BGarden&psig=AFQjCNEaF2z05K5IUjGIvMuINEL6bGedDw&ust=1460821364878034)
 
 ### Description
 ___
