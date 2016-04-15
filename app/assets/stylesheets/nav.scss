@@ -10,6 +10,7 @@ $transparent-green: rgba(110, 165, 59, 0.4);
 
 $not-transparent-green: rgba(255, 255, 255, 0.8);
 $button-green: rgba(110, 165, 59, 0.8);
+$button-red: #d06944;
 
 .transparent {
   background: $transparent-green;
@@ -118,5 +119,5 @@ ul {
 }
 
 .button.alert {
-  background: #d06944;
+  background: $button-red;
 }
