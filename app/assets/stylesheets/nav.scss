@@ -63,7 +63,6 @@ $button-green: rgba(110, 165, 59, 0.8);
     a {
       font-size: larger;
       font-weight: bold;
-      color: #2d3b56;
     }
   }
 
@@ -80,7 +79,6 @@ $button-green: rgba(110, 165, 59, 0.8);
     a {
       font-size: larger;
       font-weight: bold;
-      color: #2d3b56;
     }
   }
 }
@@ -112,4 +110,13 @@ ul {
 .button:hover,
 .button:focus {
   background: $button-green;
+}
+
+
+.button.success {
+  background: $button-green;
+}
+
+.button.alert {
+  background: #d06944;
 }
