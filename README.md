@@ -10,11 +10,11 @@
 ### Description
 ___
 
-This project is a web application that allows people looking for parks in the Boston area to look up parks by location and rating to find good parks near where they are. This way they are able to get outside more in places they want to be while still in the city.
+This project is a web application that allows people (and other animals) in the Boston area to search for parks by location and rating.
 
-This project is developed using Ruby on Rails with a PostGres database, accessed with ActiveRecord. It is intended to be used in a modern web browser.
+The project is developed using Ruby on Rails with a PostGres database, accessed with ActiveRecord. It is intended to be used in a modern web browser.
 
-Profile photos are uploaded with the CarrierWave gem, and results are paginated with the Kaminari gem.
+Profile photos are uploaded with CarrierWave, and results are paginated with Kaminari.
 
 Feature tests utilize RSpec/Capybara.
 
