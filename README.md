@@ -26,12 +26,12 @@ ___
 ### Features
 ___
 
-* Create a park for reviews
-* Rate a park and include a new reviews
+* Create a park
+* Rate a park and include a review
 * Vote on a review - upvote the ones you agree with, downvote the ones you don't
-* Sign up for an account, with a profile picture
+* Sign up for an account with an optional profile picture
 * Search for a specific park
-* Sign up to be an administrator to help moderate the site
+* Administrator can be created
 * Get an email when someone reviews a park you added
 
 ### Group Members
